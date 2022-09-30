@@ -1,6 +1,6 @@
 
 
-
+axios.defaults.withCredentials = true;
 const baseUrl = 'http://127.0.0.1:5000';
 const myForm = document.getElementById('myloginForm');
 const mh = document.getElementById('msgHead');

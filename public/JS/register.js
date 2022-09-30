@@ -1,5 +1,5 @@
 
-
+axios.defaults.withCredentials = true;
 const mySignUpForm = document.getElementById('signupForm');
 const mh = document.getElementById('msgHead');
 
