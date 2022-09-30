@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/navbar.css">
+<link rel="stylesheet" href="/css/all.css">
+<link rel="stylesheet" href="/css/query.css">
+<nav class="navbar1">
+    <div class="navbar-container1 container1">
+        <input type="checkbox">
+        <div class="hamburger-lines1">
+         <span class="line line1"></span>
+         <span class="line line2"></span>
+         <span class="line line3"></span>
+        </div> 
+        <ul class="menu-items1">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#food">Category</a></li>
+        <li><a href="/#food-menu">Menu</a></li>
+        <li><a href="/#testimonial">Testimonial</a></li>
+        <li><a href="/#contact">Contact </a></li>
+        <li>
+            <%if(user){ %>
+                <a href="/profile"><%=user.username %> </a>
+            <%}else{%>
+                <a href="/login">Login/Signup </a>
+            <%}%>
+        </li>
+        </ul>
+        <h1 class="logo1">FW</h1>
+
+    </div>
+</nav>

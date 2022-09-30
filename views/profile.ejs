@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/query.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <script> let getUserId = `<%= user.id %>`   </script>
+    <div>
+        <%- include ('navbar.ejs') %>
+        <div id="messageBox">
+            <h4 id="messageDisplay"></h4>
+        </div>
+    </div>
+    <div>
+        <div class="formOuterContainer">
+            <form id="myUpdateForm" class="formContainer" >
+                <div class="innerFormContainer">
+                    <input id="profileImageDisplay" type="image" src="/img/about-img.jpg" alt="profile pic">
+                    <input id="profileImageInput" type="file" src="" alt="profile pic">
+                    <span id="profileUsernameShow"><%=user.username%></span>
+                </div>
+                <div class="innerFormContainer">
+                    <div class="contentContainer">
+                        <label for="inputName">Name</label>
+                        <input type="text" name="inputName" id="inputName" pattern="[A-Za-z0-9]+"  required value=<%=user.name %> >
+                    </div>
+                    <div class="contentContainer">
+                        <label for="inputUsername">Username</label>
+                        <input type="text" name="inputUsername" id="inputUsername" pattern="[A-Za-z0-9]+" required value=<%=user.username%> >
+                    </div>
+                    <div class="contentContainer">
+                        <label for="inputMobile">Mobile Number</label>
+                        <input type="mobile" name="inputMobile" id="inputMobile" pattern="[0-9]{10}" required value=<%=user.mobile%> >
+                    </div>
+                    <div class="contentContainer">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" name="inputEmail" id="inputEmail" required value=<%=user.email%> >
+                    </div>
+                </div>
+                <div class="innerFormContainer">
+                    <div class="contentContainer">
+                        <label for="inputOldPassword">Current password</label>
+                        <input type="password" name="inputOldPassword" id="inputOldPassword" required >
+                    </div>
+                    <div class="contentContainer checkboxContainer">
+                        <label for="passwordCheckbox">Update password</label>
+                        <input type="checkbox" id="passwordCheckbox">
+                    </div>
+                    <div style="visibility: hidden;opacity: 0;" id="forPassword1" class="contentContainer forPassword">
+                        <label for="inputNewPassord">Password</label>
+                        <input type="password" name="inputNewPassord" id="inputNewPassord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <span>Atleast 1 UpperCase,1 Lowercase & 1 number (min 8)</span>
+                    </div>
+                    <div  style="visibility: hidden;opacity: 0;" id="forPassword2" class="contentContainer forPassword">
+                        <label for="inputNewConfirmPassword">Confirm Password</label>
+                        <input type="password" name="inputNewConfirmPassword" id="inputNewConfirmPassword">
+                    </div>
+                    <div class="buttonBox contentContainer">
+                        <button class="btn btn-success mybtn" type="submit" id="updateButton">Update</button>
+                        <button class="btn btn-danger mybtn" id="logoutButton">Logout</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include ('footer.ejs') %>
+</body>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/JS/profile.js"></script>
+</html>
+
+

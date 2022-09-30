@@ -1,0 +1,50 @@
+
+
+
+.pk_form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100%-75px);
+}
+
+.pk_form{
+    max-width: 342px;
+    max-height: 331px;
+
+}
+
+.pk_btn_dis{
+    display: flex;
+    justify-content: space-around;
+}
+
+.pk_signUp_btn{
+    cursor: pointer;
+
+}
+
+.progressMsgBar{
+    width: 100vw;
+    height:30px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.outerFormContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100%-75px);
+    
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
