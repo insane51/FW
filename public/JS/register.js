@@ -1,13 +1,8 @@
-
+//For reqests are going with all credentials like cookie
 axios.defaults.withCredentials = true;
 const mySignUpForm = document.getElementById('signupForm');
 const mh = document.getElementById('msgHead');
 
-// const port = process.env.PORT || 5000;
-// const  hostname = process.env.Hostname;
-// const port = 80;
-// const hostname = `127.0.0.1`;
-// const baseUrl = `${hostname}:${port}`;
 
 mySignUpForm.addEventListener('submit', async (e)=>{
     e.preventDefault();
@@ -24,7 +19,6 @@ mySignUpForm.addEventListener('submit', async (e)=>{
         mobile: mobile,
         password:password
     };
-    console.log(logUser);
     
     try{
         const res = await axios.post(`/api/auth/register`,{
@@ -34,15 +28,13 @@ mySignUpForm.addEventListener('submit', async (e)=>{
             mobile: logUser.mobile,
             password: logUser.password
         })
-        console.log(res);
-        console.log("try block")
         mh.innerText = res.data.message;
         if(res.status === 201 ) {
             window.location = `${baseUrl}/login`;
         }       
         
     }catch(err){
-        mh.innerText = err;
-        // mh.innerText = `Something went wrong!!!`;
+        mh.innerText = `Something went wrong!!!`;
+        console.log(err);
     }  
 });

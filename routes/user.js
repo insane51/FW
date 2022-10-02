@@ -7,7 +7,7 @@ const { verifyToken, verifyTokenAndAuthorization } = require('./tokenVerify');
 
 //USER UPDATE
 route.put(`/update/:id`,verifyTokenAndAuthorization,async (req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     try{
         //CHECK FOR CORRECT PASSWORD
         const user = await User.findById(req.params.id);

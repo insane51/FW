@@ -1,15 +1,11 @@
+//For reqests are going with all credentials like cookie
 axios.defaults.withCredentials = true;
-//BaseUrl
-// const port = process.env.PORT || 5000;
-// const  hostname = process.env.Hostname;
-// const port = 5000;
-// const hostname = `127.0.0.1`;
-// const baseUrl = `127.0.0.1:5000`;
 
 //LOGOUT Button working
 const logoutbtn = document.getElementById(`logoutButton`);
 logoutbtn.addEventListener('click',async(e)=>{
     try{
+        //we add direct path without adding base URL,so it completely work in heroku
         const res = await axios.get(`/api/auth/logout`);
         window.location = `/`;
     }catch(err){
@@ -90,7 +86,7 @@ myUpdateForm.addEventListener('submit', async (e)=>{
         newPassword : newPassword.value,
         oldPassword : inputOldPassword.value
     };
-    console.log(data);
+
     //API call for User Update
     try{
         const res = await axios.put(`/api/user/update/${getUserId}`,data);

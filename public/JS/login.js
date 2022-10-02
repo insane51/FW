@@ -10,13 +10,11 @@ const mh = document.getElementById('msgHead');
 
 //API Call for Login the User
 myForm.addEventListener('submit',async (e)=>{
-    console.log("call");
     e.preventDefault();
     const logUser = document.getElementById('logUserInput').value;
     const password = document.getElementById('passordInput').value;
     
     try{
-        console.log(`url : ${baseUrl}/api/auth/login`);
         const res = await axios.post(`/api/auth/login`,
         {logUser:logUser,password:password});
 

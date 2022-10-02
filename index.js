@@ -40,7 +40,6 @@ app.set('view engine','ejs');
 
 
 app.listen(port,(req,res)=>{
-    // console.log("run");
 });
 
 //Page Routes
