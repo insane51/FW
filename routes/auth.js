@@ -73,7 +73,7 @@ route.post('/login',async(req,res)=>{
             })
             .status(202)
             .json({ message: "Logged in successfully",
-                    redirectURL: `http://127.0.0.1:5000/` });
+                    redirectURL: `/` });
 
     }catch(err){
         res.status(502).json("Server Error"+ err);
