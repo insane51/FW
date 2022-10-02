@@ -30,7 +30,7 @@ mySignUpForm.addEventListener('submit', async (e)=>{
         })
         mh.innerText = res.data.message;
         if(res.status === 201 ) {
-            window.location = `${baseUrl}/login`;
+            window.location = `/login`;
         }       
         
     }catch(err){
