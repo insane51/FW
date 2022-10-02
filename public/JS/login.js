@@ -1,7 +1,10 @@
 
 
 axios.defaults.withCredentials = true;
-const baseUrl = 'http://127.0.0.1:5000';
+
+
+const baseUrl = `127.0.0.1:5000`;
+
 const myForm = document.getElementById('myloginForm');
 const mh = document.getElementById('msgHead');
 
@@ -13,7 +16,8 @@ myForm.addEventListener('submit',async (e)=>{
     const password = document.getElementById('passordInput').value;
     
     try{
-        const res = await axios.post(`${baseUrl}/api/auth/login`,
+        console.log(`url : ${baseUrl}/api/auth/login`);
+        const res = await axios.post(`/api/auth/login`,
         {logUser:logUser,password:password});
 
         mh.innerText = res.data.message;

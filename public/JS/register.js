@@ -3,7 +3,11 @@ axios.defaults.withCredentials = true;
 const mySignUpForm = document.getElementById('signupForm');
 const mh = document.getElementById('msgHead');
 
-const baseUrl = 'http://127.0.0.1:5000';
+// const port = process.env.PORT || 5000;
+// const  hostname = process.env.Hostname;
+// const port = 80;
+// const hostname = `127.0.0.1`;
+// const baseUrl = `${hostname}:${port}`;
 
 mySignUpForm.addEventListener('submit', async (e)=>{
     e.preventDefault();
@@ -23,7 +27,7 @@ mySignUpForm.addEventListener('submit', async (e)=>{
     console.log(logUser);
     
     try{
-        const res = await axios.post(`${baseUrl}/api/auth/register`,{
+        const res = await axios.post(`/api/auth/register`,{
             name: logUser.name,
             username: logUser.username,
             email: logUser.email,

@@ -1,13 +1,17 @@
 axios.defaults.withCredentials = true;
 //BaseUrl
-const baseUrl = 'http://127.0.0.1:5000';
+// const port = process.env.PORT || 5000;
+// const  hostname = process.env.Hostname;
+// const port = 5000;
+// const hostname = `127.0.0.1`;
+// const baseUrl = `127.0.0.1:5000`;
 
 //LOGOUT Button working
 const logoutbtn = document.getElementById(`logoutButton`);
 logoutbtn.addEventListener('click',async(e)=>{
     try{
-        const res = await axios.get(`${baseUrl}/api/auth/logout`);
-        window.location = baseUrl;
+        const res = await axios.get(`/api/auth/logout`);
+        window.location = `/`;
     }catch(err){
         console.log(err);
     }
@@ -89,7 +93,7 @@ myUpdateForm.addEventListener('submit', async (e)=>{
     console.log(data);
     //API call for User Update
     try{
-        const res = await axios.put(`${baseUrl}/api/user/update/${getUserId}`,data);
+        const res = await axios.put(`/api/user/update/${getUserId}`,data);
         if(res.status === 201){
             messageBoxController(res.data.message,`#30ac30`);
             profileUsernameShow.innerText = username.value;

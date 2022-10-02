@@ -16,8 +16,8 @@ const corsOptions ={
 app.use(cors(corsOptions)) 
 
 env.config();
-const  hostname = process.env.hostname;
-const  port = process.env.PORT||8080;
+const  hostname = process.env.Hostname;
+const  port = process.env.PORT||80;
 
 //DB Connection
 mongoose.connect(process.env.dBurl,{
