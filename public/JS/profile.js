@@ -86,7 +86,10 @@ myUpdateForm.addEventListener('submit', async (e)=>{
         newPassword : newPassword.value,
         oldPassword : inputOldPassword.value
     };
-
+    //To clear the password fields after getting the data
+    inputOldPassword.value = "";
+    newPassword.value = "";
+    confirmNewPassword.value ="";
     //API call for User Update
     try{
         const res = await axios.put(`/api/user/update/${getUserId}`,data);

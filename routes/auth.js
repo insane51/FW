@@ -62,10 +62,11 @@ route.post('/login',async(req,res)=>{
             return;
         }
         //JWT token is assign to the user and  save it to the cookie
+        //Token will expires after one hour
         const accessToken = jwt.sign({
             id:user._id
         },process.env.JWT_KEY,{expiresIn:'1h'});
-
+        
         res.cookie("access_token", accessToken, {
                 httpOnly: true,
                 expires: new Date(Date.now()+(60*60*1000)),
